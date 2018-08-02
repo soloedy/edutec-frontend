@@ -1,2 +1,35 @@
+<div class="navigation col-lg-12">
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a [routerLink]="['/home']" class="navbar-brand">{{title}}</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/animales']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-star"></span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/contacto']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-comment"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navba-right" *ngIf="identity">
+                <li class="avatar">
+                    <img src="{{ url + 'get-image-file/' + identity.image}}"/>
+                </li>
+                <li class="dropdown">
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <router-outlet></router-outlet>
-
