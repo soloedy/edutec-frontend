@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user';
 import { UserService } from '../../services/user.service';
+import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,9 @@ export class LoginComponent implements OnInit {
   public user: User;
 
   constructor(
-    private _userService: UserService
+    private _userService: UserService,
+    private storage: LocalStorageService,
+    private sessionStorage: SessionStorageService,
   ) { 
     this.user = new User(' ',' ',' ',' ',' ',' ');
   }
@@ -26,7 +29,9 @@ export class LoginComponent implements OnInit {
     this._userService.login(this.user)
     .subscribe(
       response => {
-        console.log(response);
+        const token = response['token'];
+        this.storage.store('token', token);
+        this.sessionStorage.store('tokenSession', token);
       },
       error => {
         console.log(error);
