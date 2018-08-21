@@ -11,13 +11,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AnimalsComponent } from './components/animals/animals.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
+import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AnimalsComponent
+    AnimalsComponent,
+    AnimalDetailComponent,
+    AddAnimalComponent
   ],
   imports: [
     BrowserModule,

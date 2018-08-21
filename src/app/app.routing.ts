@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AnimalsComponent } from './components/animals/animals.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
+import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 
 const appRoutes: Routes = [
 	//{path: '', component: HomeComponent},
@@ -24,6 +26,14 @@ const appRoutes: Routes = [
 	{
 		path: 'animals',
 		component: AnimalsComponent
+	},
+	{
+		path: 'animal/:id',
+		component: AnimalDetailComponent
+	},
+	{
+		path: 'add-animal',
+		component: AddAnimalComponent
 	},
 	{
 		path: '**',
