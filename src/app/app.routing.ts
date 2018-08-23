@@ -7,6 +7,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
+import { EditAnimalComponent } from './components/edit-animal/edit-animal.component';
+import { componentFactoryName } from '../../node_modules/@angular/compiler';
+
 
 const appRoutes: Routes = [
 	//{path: '', component: HomeComponent},
@@ -38,6 +41,10 @@ const appRoutes: Routes = [
 	{
 		path: '**',
 		component: LoginComponent
+	},
+	{
+		path: 'edit-animal/:id',
+		component: EditAnimalComponent
 	}
 ];
 

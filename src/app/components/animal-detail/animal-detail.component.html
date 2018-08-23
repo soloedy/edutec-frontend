@@ -7,5 +7,7 @@
       <p>{{animal.year}}</p>
       <p>{{animal.description}}</p>
       <p>{{animal.origen.country}}, {{animal.origen.state}}</p>
+      <h1><a [routerLink]="['/edit-animal', animal._id]">Editar Animal</a></h1> 
+      <button class="btn btn-danger" (click)="deleteAnimal()">Eliminar</button>     
     </div>
-  </div>
+</div>

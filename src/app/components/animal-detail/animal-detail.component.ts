@@ -25,6 +25,7 @@ export class AnimalDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getAnimalId();
+    this.deleteAnimal();
   }
 
   private getAnimalId(){
@@ -42,7 +43,24 @@ export class AnimalDetailComponent implements OnInit {
       error =>{
         console.log(error);
       }
-    )
+    );
   }
 
+  private deleteAnimal(){
+    const id = this._route.snapshot.paramMap.get('id');
+    this.animalService.deleteAnimal(id)
+    .subscribe(
+      result => {
+        const animal = result.animal;
+        if (animal){
+          this._router.navigate(['/animals']);
+        }else{
+          alert('No se ha podido eliminar el animal.');
+        }
+      },
+      error =>{
+        console.log(error);
+      }
+    );
+  }
 }

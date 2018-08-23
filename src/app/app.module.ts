@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2Webstorage } from 'ngx-webstorage';
+import { SimpleModalModule } from 'ngx-simple-modal';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
+import { EditAnimalComponent } from './components/edit-animal/edit-animal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AddAnimalComponent } from './components/add-animal/add-animal.component
     RegisterComponent,
     AnimalsComponent,
     AnimalDetailComponent,
-    AddAnimalComponent
+    AddAnimalComponent,
+    EditAnimalComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { AddAnimalComponent } from './components/add-animal/add-animal.component
     routing,
     BrowserAnimationsModule,
     Ng2Webstorage,
+    SimpleModalModule
   ],
   providers: [
     appRoutingProviders
